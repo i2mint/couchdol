@@ -177,7 +177,7 @@ from dol.util import lazyprop
 
 class CouchDbStore(Store):
     def clear(self):
-        super(CouchDbStore, self).clear()
+        super().clear()
 
     @wraps(CouchDbPersister.__init__)
     def __init__(self, *args, **kwargs):
