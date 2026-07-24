@@ -10,18 +10,27 @@ version = "0.0.2"
 description = "couchdb with a simple (dict-like or list-like) interface"
 readme = "README.md"
 requires-python = ">=3.10"
+license = "Apache-2.0"
 keywords = [
     "couchdb",
     "data access",
 ]
 authors = []
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Database",
+]
 dependencies = [
     "dol",
     "couchdb",
 ]
-
-[project.license]
-text = "Apache-2.0"
 
 [project.urls]
 Homepage = "https://github.com/i2mint/couchdol"
@@ -78,7 +87,7 @@ convention = "google"
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = [
-    "tests",
+    "couchdol",
 ]
 doctest_optionflags = [
     "NORMALIZE_WHITESPACE",
@@ -127,6 +136,7 @@ coverage_report_format = [
     "xml",
 ]
 exclude_paths = [
+    "docsrc",
     "examples",
     "scrap",
 ]
