@@ -1,5 +1,5 @@
 {
-  "collection_duration_seconds": 2.2173116207122803,
+  "collection_duration_seconds": 2.8259098529815674,
   "commit_message": "CI: skip tests and doctests when no CouchDB is reachable [skip publish] (#3)",
   "commit_sha": "2740a81997f0927f644f400dd777cccb4be4f8d3",
   "metrics": {
@@ -11,19 +11,19 @@
       "statements_total": 0
     },
     "umpyre_stats": {
-      "comment_lines": 13408,
-      "comment_lines_ratio": 0.054801911200304095,
-      "docs_lines": 29123,
-      "empty_lines": 30479,
-      "empty_lines_ratio": 0.12457543641662205,
-      "files_analyzed": 581,
-      "function_lines": 102856,
-      "function_lines_ratio": 0.4203986708247671,
-      "mean_lines_per_function": 16.152010050251256,
-      "num_classes": 1593,
-      "num_functions": 6368,
+      "comment_lines": 12998,
+      "comment_lines_ratio": 0.054530961570733345,
+      "docs_lines": 28203,
+      "empty_lines": 29435,
+      "empty_lines_ratio": 0.12348967947642221,
+      "files_analyzed": 570,
+      "function_lines": 98453,
+      "function_lines_ratio": 0.4130432958550092,
+      "mean_lines_per_function": 16.230300032970657,
+      "num_classes": 1532,
+      "num_functions": 6066,
       "pypi_version": "0.0.2",
-      "total_lines": 244663
+      "total_lines": 238360
     },
     "wily": {
       "cyclomatic_avg": 0.0,
@@ -42,6 +42,6 @@
   },
   "python_version": "3.10",
   "schema_version": "1.0",
-  "timestamp": "2026-11-22T17:06:05.631100Z",
+  "timestamp": "2026-11-22T17:06:10.046757Z",
   "workflow_status": {}
 }
