@@ -1,0 +1,19 @@
+# couchdol
+
+> couchdb with a simple (dict-like or list-like) interface
+
+
+## Pages
+
+- [couchdol](index.html.md): couchdb with a simple (dict-like or list-like) interface
+- [API reference](api.html.md): | &#96;couchdol&#96;   | couchdb with a simple (dict-like or list-like) interface   |
+- [couchdol](_autosummary/couchdol.html.md): couchdb with a simple (dict-like or list-like) interface
+- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-22 17:06 UTC&#42;&#42; from commit &lt;a href="https://github.com/i2m...
+
+## Optional
+
+- [couchdol.md](couchdol.md): Complete documentation in a single file.
+
+## Build
+
+- [build_info.json](build_info.json): build provenance (commit, version, tool versions, whether the docs match the package)

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "built_at": "2026-11-22T17:06:55Z",
+  "package": {
+    "name": "couchdol",
+    "version": "0.0.3",
+    "display_name": "couchdol",
+    "source": "pyproject.toml"
+  },
+  "git": {
+    "available": true,
+    "commit": "d46330ff32d97c424652bf1dca07a0e082d471ff",
+    "short_commit": "d46330f",
+    "branch": "master",
+    "tags": [
+      "0.0.3"
+    ],
+    "dirty": false,
+    "remote_url": "https://github.com/i2mint/couchdol",
+    "commit_url": "https://github.com/i2mint/couchdol/commit/d46330ff32d97c424652bf1dca07a0e082d471ff",
+    "error": null
+  },
+  "ci": {
+    "provider": "github",
+    "repository": "i2mint/couchdol",
+    "sha": "2740a81997f0927f644f400dd777cccb4be4f8d3",
+    "sha_in_history": true,
+    "ref": "refs/heads/master",
+    "ref_name": "master",
+    "run_id": "45047440026",
+    "run_url": "https://github.com/i2mint/couchdol/actions/runs/45047440026",
+    "server_url": "https://github.com"
+  },
+  "tools": {
+    "epythet": "0.2.23",
+    "sphinx": "9.1.1",
+    "docutils": "0.22.4",
+    "python": "3.12.16"
+  },
+  "config": {
+    "theme": "auto",
+    "html_theme": "furo",
+    "accent": "#006c73",
+    "mode": "auto",
+    "api_generator": "autosummary",
+    "ignore": [
+      "tests/",
+      "scrap/",
+      "examples/"
+    ],
+    "agent_outputs": true,
+    "aggregates": [
+      "md"
+    ],
+    "ai_artifacts": true,
+    "provenance": true,
+    "docs_dir": "docsrc"
+  },
+  "site": {
+    "modules_documented": 1,
+    "objects_documented": 5
+  },
+  "pypi": {
+    "checked": true,
+    "latest": "0.0.3",
+    "relation": "same",
+    "error": null
+  },
+  "reproduce": "git clone https://github.com/i2mint/couchdol && cd couchdol\ngit checkout d46330ff32d97c424652bf1dca07a0e082d471ff\npip install \"epythet==0.2.23\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
+  "warnings": [],
+  "alignment": {
+    "aligned": true,
+    "notes": []
+  }
+}

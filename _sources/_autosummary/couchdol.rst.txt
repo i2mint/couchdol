@@ -1,0 +1,14 @@
+﻿couchdol
+========
+
+.. automodule:: couchdol
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CouchDbPersister
+      CouchDbStore
+      CouchDbTupleKeyStore
+   

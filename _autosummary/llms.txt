@@ -1,0 +1,12 @@
+# couchdol
+
+> couchdb with a simple (dict-like or list-like) interface
+
+
+## Pages in this subsection
+
+- [couchdol](couchdol.html.md): couchdb with a simple (dict-like or list-like) interface
+
+## Optional
+
+- [Top-level llms.txt](../llms.txt): Complete documentation index.
