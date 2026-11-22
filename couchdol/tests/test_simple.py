@@ -1,7 +1,10 @@
-from couchdol import CouchDbStore
+from couchdol import CouchDbStore, CouchDbTupleKeyStore
 
 
-def test_couchdb_store(s=CouchDbStore(), k=None, v=None):
+def test_couchdb_store(s=None, k=None, v=None):
+    # Instantiate lazily: a default-arg store would connect at collection time.
+    if s is None:
+        s = CouchDbStore()
     if k is None:
         k = {"_id": "foo"}
     if v is None:
