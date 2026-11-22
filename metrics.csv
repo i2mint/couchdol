@@ -1,8 +1,8 @@
 metric,value
 schema_version,1.0
-timestamp,2026-11-22T17:01:58.718159Z
-commit_sha,3ac92b863ed711e6ac242c84eeb67cd980a50a3c
-commit_message,CI: skip live-CouchDB tests and doctests when no server is reachable; lazy store in test; docstring in docsrc/conf.py [skip publish]
+timestamp,2026-11-22T17:02:02.678245Z
+commit_sha,ff7387ad6a1d96353ae9f7590d9a0e473a54df7d
+commit_message,Merge 3ac92b863ed711e6ac242c84eeb67cd980a50a3c into e2314f935c0d2b6a010ba0b48cb61e0d02a979c6
 python_version,3.10
 metrics.umpyre_stats.num_functions,6368
 metrics.umpyre_stats.num_classes,1593
@@ -33,4 +33,4 @@ metrics.coverage.branch_coverage,0.0
 metrics.coverage.statements_covered,0
 metrics.coverage.statements_total,0
 metrics.coverage.error,No coverage file found
-collection_duration_seconds,2.4376132488250732
+collection_duration_seconds,2.899994134902954
