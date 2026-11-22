@@ -1,6 +1,7 @@
 """
 couchdb with a simple (dict-like or list-like) interface
 """
+
 from dol.base import Persister
 from couchdb import Server
 
@@ -64,20 +65,20 @@ class CouchDbPersister(Persister):
         )
 
     def __init__(
-            self,
-            user="admin",
-            password="admin",
-            url="http://127.0.0.1:5984",
-            db_name="py2store",
-            key_fields=("_id",),
-            couchdb_client_kwargs=None,
+        self,
+        user="admin",
+        password="admin",
+        url="http://127.0.0.1:5984",
+        db_name="py2store",
+        key_fields=("_id",),
+        couchdb_client_kwargs=None,
     ):
         if couchdb_client_kwargs is None:
             couchdb_client_kwargs = {}
         if user and password:
             # put credentials in url if provided like https://username:password@example.com:5984/
             if "//" in url:  # if scheme present
-                url = f'{url.split("//")[0]}//{user}:{password}@{url.split("//")[1]}'
+                url = f"{url.split('//')[0]}//{user}:{password}@{url.split('//')[1]}"
             else:
                 url = f"http//{user}:{password}@{url}"
         self._couchdb_server = Server(url=url, **couchdb_client_kwargs)
@@ -212,11 +213,7 @@ class CouchDbTupleKeyStore(CouchDbStore):
         return self.store._key_fields
 
     def _id_of_key(self, k):
-        return {
-            field: field_val for field, field_val in zip(self._key_fields, k)
-        }
+        return {field: field_val for field, field_val in zip(self._key_fields, k)}
 
     def _key_of_id(self, _id):
         return tuple(_id[x] for x in self._key_fields)
-
-
