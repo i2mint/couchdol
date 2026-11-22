@@ -1,0 +1,36 @@
+metric,value
+schema_version,1.0
+timestamp,2026-11-22T17:01:58.718159Z
+commit_sha,3ac92b863ed711e6ac242c84eeb67cd980a50a3c
+commit_message,CI: skip live-CouchDB tests and doctests when no server is reachable; lazy store in test; docstring in docsrc/conf.py [skip publish]
+python_version,3.10
+metrics.umpyre_stats.num_functions,6368
+metrics.umpyre_stats.num_classes,1593
+metrics.umpyre_stats.total_lines,244663
+metrics.umpyre_stats.empty_lines,30479
+metrics.umpyre_stats.comment_lines,13408
+metrics.umpyre_stats.docs_lines,29123
+metrics.umpyre_stats.function_lines,102856
+metrics.umpyre_stats.empty_lines_ratio,0.12457543641662205
+metrics.umpyre_stats.comment_lines_ratio,0.054801911200304095
+metrics.umpyre_stats.function_lines_ratio,0.4203986708247671
+metrics.umpyre_stats.mean_lines_per_function,16.152010050251256
+metrics.umpyre_stats.files_analyzed,581
+metrics.umpyre_stats.pypi_version,0.0.2
+metrics.workflow_status.last_run_status,success
+metrics.workflow_status.last_success_timestamp,2026-07-24T19:19:23Z
+metrics.workflow_status.recent_failure_count,2
+metrics.workflow_status.run_url,https://github.com/i2mint/couchdol/actions/runs/30120264949
+metrics.workflow_status.total_runs_analyzed,4
+metrics.wily.cyclomatic_avg,0.0
+metrics.wily.maintainability_index,0.0
+metrics.wily.total_loc,0
+metrics.wily.files_analyzed,0
+metrics.wily.error,"wily build failed: [31mFailed to setup archiver: 'Dirty repository, make sure you commit/stash files first'[0m
+"
+metrics.coverage.line_coverage,0.0
+metrics.coverage.branch_coverage,0.0
+metrics.coverage.statements_covered,0
+metrics.coverage.statements_total,0
+metrics.coverage.error,No coverage file found
+collection_duration_seconds,2.4376132488250732
