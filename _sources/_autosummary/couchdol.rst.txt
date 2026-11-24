@@ -4,6 +4,19 @@
 .. automodule:: couchdol
 
    
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      COUCHDB_URL_ENVVAR
+      DFLT_COUCHDB_URL
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      default_couchdb_url
+   
    .. rubric:: Classes
 
    .. autosummary::

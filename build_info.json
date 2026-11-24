@@ -1,38 +1,38 @@
 {
   "schema_version": 1,
-  "built_at": "2026-11-22T17:06:55Z",
+  "built_at": "2026-11-24T01:13:47Z",
   "package": {
     "name": "couchdol",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "display_name": "couchdol",
     "source": "pyproject.toml"
   },
   "git": {
     "available": true,
-    "commit": "d46330ff32d97c424652bf1dca07a0e082d471ff",
-    "short_commit": "d46330f",
+    "commit": "d304c8d5316135cc661a9474dc326ef80e34b24c",
+    "short_commit": "d304c8d",
     "branch": "master",
     "tags": [
-      "0.0.3"
+      "0.0.4"
     ],
     "dirty": false,
     "remote_url": "https://github.com/i2mint/couchdol",
-    "commit_url": "https://github.com/i2mint/couchdol/commit/d46330ff32d97c424652bf1dca07a0e082d471ff",
+    "commit_url": "https://github.com/i2mint/couchdol/commit/d304c8d5316135cc661a9474dc326ef80e34b24c",
     "error": null
   },
   "ci": {
     "provider": "github",
     "repository": "i2mint/couchdol",
-    "sha": "2740a81997f0927f644f400dd777cccb4be4f8d3",
+    "sha": "4de95da4983ae44b975c981ba6fdf29d7eddcfd7",
     "sha_in_history": true,
     "ref": "refs/heads/master",
     "ref_name": "master",
-    "run_id": "45047440026",
-    "run_url": "https://github.com/i2mint/couchdol/actions/runs/45047440026",
+    "run_id": "45303226746",
+    "run_url": "https://github.com/i2mint/couchdol/actions/runs/45303226746",
     "server_url": "https://github.com"
   },
   "tools": {
-    "epythet": "0.2.23",
+    "epythet": "0.2.25",
     "sphinx": "9.1.1",
     "docutils": "0.22.4",
     "python": "3.12.16"
@@ -58,15 +58,15 @@
   },
   "site": {
     "modules_documented": 1,
-    "objects_documented": 5
+    "objects_documented": 8
   },
   "pypi": {
     "checked": true,
-    "latest": "0.0.3",
+    "latest": "0.0.4",
     "relation": "same",
     "error": null
   },
-  "reproduce": "git clone https://github.com/i2mint/couchdol && cd couchdol\ngit checkout d46330ff32d97c424652bf1dca07a0e082d471ff\npip install \"epythet==0.2.23\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
+  "reproduce": "git clone https://github.com/i2mint/couchdol && cd couchdol\ngit checkout d304c8d5316135cc661a9474dc326ef80e34b24c\npip install \"epythet==0.2.25\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
   "warnings": [],
   "alignment": {
     "aligned": true,

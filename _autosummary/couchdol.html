@@ -248,6 +248,31 @@
           <section id="module-couchdol">
 <span id="couchdol"></span><h1>couchdol<a class="headerlink" href="#module-couchdol" title="Link to this heading">¶</a></h1>
 <p>couchdb with a simple (dict-like or list-like) interface</p>
+<p>The server URL defaults to the <code class="docutils literal notranslate"><span class="pre">COUCHDB_URL</span></code> environment variable when it is
+set, else <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5984</span></code> (see <a class="reference internal" href="#couchdol.default_couchdb_url" title="couchdol.default_couchdb_url"><code class="xref py py-func docutils literal notranslate"><span class="pre">default_couchdb_url()</span></code></a>).</p>
+<p class="rubric">Module Attributes</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#couchdol.COUCHDB_URL_ENVVAR" title="couchdol.COUCHDB_URL_ENVVAR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COUCHDB_URL_ENVVAR</span></code></a></p></td>
+<td><p>Environment variable naming the default CouchDB server URL.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#couchdol.DFLT_COUCHDB_URL" title="couchdol.DFLT_COUCHDB_URL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DFLT_COUCHDB_URL</span></code></a></p></td>
+<td><p>URL used when <code class="docutils literal notranslate"><span class="pre">COUCHDB_URL</span></code> is not set.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Functions</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#couchdol.default_couchdb_url" title="couchdol.default_couchdb_url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_couchdb_url</span></code></a>()</p></td>
+<td><p>The CouchDB URL stores use when none is given: <code class="docutils literal notranslate"><span class="pre">$COUCHDB_URL</span></code> or the local default.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p class="rubric">Classes</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
@@ -264,9 +289,15 @@
 </tbody>
 </table>
 </div>
+<dl class="py data">
+<dt class="sig sig-object py" id="couchdol.COUCHDB_URL_ENVVAR">
+<span class="sig-prename descclassname"><span class="pre">couchdol.</span></span><span class="sig-name descname"><span class="pre">COUCHDB_URL_ENVVAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'COUCHDB_URL'</span></span><a class="headerlink" href="#couchdol.COUCHDB_URL_ENVVAR" title="Link to this definition">¶</a></dt>
+<dd><p>Environment variable naming the default CouchDB server URL.</p>
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="couchdol.CouchDbPersister">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">couchdol.</span></span><span class="sig-name descname"><span class="pre">CouchDbPersister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'http://127.0.0.1:5984'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'py2store'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('_id',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">couchdb_client_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/couchdol.html#CouchDbPersister"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#couchdol.CouchDbPersister" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">couchdol.</span></span><span class="sig-name descname"><span class="pre">CouchDbPersister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'py2store'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('_id',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">couchdb_client_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/couchdol.html#CouchDbPersister"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#couchdol.CouchDbPersister" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">KvPersister</span></code></p>
 <p>A basic couchDB persister.
 Note that the couchDB persister is designed not to overwrite the value of a key if the key already exists.
@@ -334,7 +365,7 @@ If you really want to delete all your data, you can do so by doing something lik
 
 <dl class="py class">
 <dt class="sig sig-object py" id="couchdol.CouchDbStore">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">couchdol.</span></span><span class="sig-name descname"><span class="pre">CouchDbStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'http://127.0.0.1:5984'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'py2store'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('_id',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">couchdb_client_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/couchdol.html#CouchDbStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#couchdol.CouchDbStore" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">couchdol.</span></span><span class="sig-name descname"><span class="pre">CouchDbStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'py2store'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('_id',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">couchdb_client_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/couchdol.html#CouchDbStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#couchdol.CouchDbStore" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Store</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="couchdol.CouchDbStore.clear">
@@ -360,7 +391,7 @@ If you really want to delete all your data, you can do so by doing something lik
 
 <dl class="py class">
 <dt class="sig sig-object py" id="couchdol.CouchDbTupleKeyStore">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">couchdol.</span></span><span class="sig-name descname"><span class="pre">CouchDbTupleKeyStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'http://127.0.0.1:5984'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'py2store'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('_id',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">couchdb_client_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/couchdol.html#CouchDbTupleKeyStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#couchdol.CouchDbTupleKeyStore" title="Link to this definition">¶</a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">couchdol.</span></span><span class="sig-name descname"><span class="pre">CouchDbTupleKeyStore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'py2store'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('_id',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">couchdb_client_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/couchdol.html#CouchDbTupleKeyStore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#couchdol.CouchDbTupleKeyStore" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#couchdol.CouchDbStore" title="couchdol.CouchDbStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">CouchDbStore</span></code></a></p>
 <p>CouchDbStore using tuple keys.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">CouchDbTupleKeyStore</span><span class="p">(</span><span class="n">key_fields</span><span class="o">=</span><span class="p">(</span><span class="s1">'_id'</span><span class="p">,</span> <span class="s1">'user'</span><span class="p">))</span>
@@ -381,6 +412,23 @@ If you really want to delete all your data, you can do so by doing something lik
 <span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="n">orig_length</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="couchdol.DFLT_COUCHDB_URL">
+<span class="sig-prename descclassname"><span class="pre">couchdol.</span></span><span class="sig-name descname"><span class="pre">DFLT_COUCHDB_URL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'http://127.0.0.1:5984'</span></span><a class="headerlink" href="#couchdol.DFLT_COUCHDB_URL" title="Link to this definition">¶</a></dt>
+<dd><p>URL used when <code class="docutils literal notranslate"><span class="pre">COUCHDB_URL</span></code> is not set.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="couchdol.default_couchdb_url">
+<span class="sig-prename descclassname"><span class="pre">couchdol.</span></span><span class="sig-name descname"><span class="pre">default_couchdb_url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/couchdol.html#default_couchdb_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#couchdol.default_couchdb_url" title="Link to this definition">¶</a></dt>
+<dd><p>The CouchDB URL stores use when none is given: <code class="docutils literal notranslate"><span class="pre">$COUCHDB_URL</span></code> or the local default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></span></p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -429,6 +477,7 @@ If you really want to delete all your data, you can do so by doing something lik
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">couchdol</a><ul>
+<li><a class="reference internal" href="#couchdol.COUCHDB_URL_ENVVAR"><code class="docutils literal notranslate"><span class="pre">COUCHDB_URL_ENVVAR</span></code></a></li>
 <li><a class="reference internal" href="#couchdol.CouchDbPersister"><code class="docutils literal notranslate"><span class="pre">CouchDbPersister</span></code></a><ul>
 <li><a class="reference internal" href="#couchdol.CouchDbPersister.clear"><code class="docutils literal notranslate"><span class="pre">CouchDbPersister.clear()</span></code></a></li>
 </ul>
@@ -438,6 +487,8 @@ If you really want to delete all your data, you can do so by doing something lik
 </ul>
 </li>
 <li><a class="reference internal" href="#couchdol.CouchDbTupleKeyStore"><code class="docutils literal notranslate"><span class="pre">CouchDbTupleKeyStore</span></code></a></li>
+<li><a class="reference internal" href="#couchdol.DFLT_COUCHDB_URL"><code class="docutils literal notranslate"><span class="pre">DFLT_COUCHDB_URL</span></code></a></li>
+<li><a class="reference internal" href="#couchdol.default_couchdb_url"><code class="docutils literal notranslate"><span class="pre">default_couchdb_url()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -449,7 +500,7 @@ If you really want to delete all your data, you can do so by doing something lik
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=7cc827d7"></script>
+</div><script src="../_static/documentation_options.js?v=94eb6667"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>

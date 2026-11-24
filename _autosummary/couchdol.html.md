@@ -2,6 +2,20 @@
 
 couchdb with a simple (dict-like or list-like) interface
 
+The server URL defaults to the `COUCHDB_URL` environment variable when it is
+set, else `http://127.0.0.1:5984` (see [`default_couchdb_url()`](#couchdol.default_couchdb_url)).
+
+### Module Attributes
+
+| [`COUCHDB_URL_ENVVAR`](#couchdol.COUCHDB_URL_ENVVAR)   | Environment variable naming the default CouchDB server URL.   |
+|-----------------------------------------------------------------------|---------------------------------------------------------------|
+| [`DFLT_COUCHDB_URL`](#couchdol.DFLT_COUCHDB_URL)     | URL used when `COUCHDB_URL` is not set.                       |
+
+### Functions
+
+| [`default_couchdb_url`](#couchdol.default_couchdb_url)()   | The CouchDB URL stores use when none is given: `$COUCHDB_URL` or the local default.   |
+|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+
 ### Classes
 
 | [`CouchDbPersister`](#couchdol.CouchDbPersister)([user, password, url, ...])      | A basic couchDB persister.     |
@@ -9,7 +23,11 @@ couchdb with a simple (dict-like or list-like) interface
 | [`CouchDbStore`](#couchdol.CouchDbStore)([user, password, url, db_name, ...]) |                                |
 | [`CouchDbTupleKeyStore`](#couchdol.CouchDbTupleKeyStore)([user, password, url, ...])  | CouchDbStore using tuple keys. |
 
-### *class* couchdol.CouchDbPersister(user='admin', password='admin', url='http://127.0.0.1:5984', db_name='py2store', key_fields=('_id',), couchdb_client_kwargs=None)
+### couchdol.COUCHDB_URL_ENVVAR *= 'COUCHDB_URL'*
+
+Environment variable naming the default CouchDB server URL.
+
+### *class* couchdol.CouchDbPersister(user='admin', password='admin', url=None, db_name='py2store', key_fields=('_id',), couchdb_client_kwargs=None)
 
 Bases: `KvPersister`
 
@@ -78,7 +96,7 @@ for k in self:
         pass
 ```
 
-### *class* couchdol.CouchDbStore(user='admin', password='admin', url='http://127.0.0.1:5984', db_name='py2store', key_fields=('_id',), couchdb_client_kwargs=None)
+### *class* couchdol.CouchDbStore(user='admin', password='admin', url=None, db_name='py2store', key_fields=('_id',), couchdb_client_kwargs=None)
 
 Bases: `Store`
 
@@ -103,7 +121,7 @@ for k in self:
         pass
 ```
 
-### *class* couchdol.CouchDbTupleKeyStore(user='admin', password='admin', url='http://127.0.0.1:5984', db_name='py2store', key_fields=('_id',), couchdb_client_kwargs=None)
+### *class* couchdol.CouchDbTupleKeyStore(user='admin', password='admin', url=None, db_name='py2store', key_fields=('_id',), couchdb_client_kwargs=None)
 
 Bases: [`CouchDbStore`](#couchdol.CouchDbStore)
 
@@ -127,3 +145,14 @@ CouchDbStore using tuple keys.
 >>> del s[k]
 >>> assert len(s) == orig_length
 ```
+
+### couchdol.DFLT_COUCHDB_URL *= 'http://127.0.0.1:5984'*
+
+URL used when `COUCHDB_URL` is not set.
+
+### couchdol.default_couchdb_url()
+
+The CouchDB URL stores use when none is given: `$COUCHDB_URL` or the local default.
+
+* **Return type:**
+  [`str`](https://docs.python.org/3/builtins/stdtypes.html#str)

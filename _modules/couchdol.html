@@ -239,10 +239,28 @@
           <h1>Source code for couchdol</h1><div class="highlight"><pre>
 <span></span><span class="sd">"""</span>
 <span class="sd">couchdb with a simple (dict-like or list-like) interface</span>
+
+<span class="sd">The server URL defaults to the ``COUCHDB_URL`` environment variable when it is</span>
+<span class="sd">set, else ``http://127.0.0.1:5984`` (see :func:`default_couchdb_url`).</span>
 <span class="sd">"""</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">dol.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Persister</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">couchdb</span><span class="w"> </span><span class="kn">import</span> <span class="n">Server</span>
+
+<span class="c1">#: Environment variable naming the default CouchDB server URL.</span>
+<span class="n">COUCHDB_URL_ENVVAR</span> <span class="o">=</span> <span class="s2">"COUCHDB_URL"</span>
+<span class="c1">#: URL used when ``COUCHDB_URL`` is not set.</span>
+<span class="n">DFLT_COUCHDB_URL</span> <span class="o">=</span> <span class="s2">"http://127.0.0.1:5984"</span>
+
+
+<div class="viewcode-block" id="default_couchdb_url">
+<a class="viewcode-back" href="../_autosummary/couchdol.html#couchdol.default_couchdb_url">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">default_couchdb_url</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The CouchDB URL stores use when none is given: ``$COUCHDB_URL`` or the local default."""</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">COUCHDB_URL_ENVVAR</span><span class="p">)</span> <span class="ow">or</span> <span class="n">DFLT_COUCHDB_URL</span></div>
+
 
 
 <div class="viewcode-block" id="CouchDbPersister">
@@ -312,11 +330,13 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">user</span><span class="o">=</span><span class="s2">"admin"</span><span class="p">,</span>
         <span class="n">password</span><span class="o">=</span><span class="s2">"admin"</span><span class="p">,</span>
-        <span class="n">url</span><span class="o">=</span><span class="s2">"http://127.0.0.1:5984"</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">db_name</span><span class="o">=</span><span class="s2">"py2store"</span><span class="p">,</span>
         <span class="n">key_fields</span><span class="o">=</span><span class="p">(</span><span class="s2">"_id"</span><span class="p">,),</span>
         <span class="n">couchdb_client_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
+        <span class="k">if</span> <span class="n">url</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">default_couchdb_url</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">couchdb_client_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">couchdb_client_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">if</span> <span class="n">user</span> <span class="ow">and</span> <span class="n">password</span><span class="p">:</span>
@@ -499,7 +519,7 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=7cc827d7"></script>
+</div><script src="../_static/documentation_options.js?v=94eb6667"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
