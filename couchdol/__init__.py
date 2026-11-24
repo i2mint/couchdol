@@ -1,9 +1,24 @@
 """
 couchdb with a simple (dict-like or list-like) interface
+
+The server URL defaults to the ``COUCHDB_URL`` environment variable when it is
+set, else ``http://127.0.0.1:5984`` (see :func:`default_couchdb_url`).
 """
+
+import os
 
 from dol.base import Persister
 from couchdb import Server
+
+#: Environment variable naming the default CouchDB server URL.
+COUCHDB_URL_ENVVAR = "COUCHDB_URL"
+#: URL used when ``COUCHDB_URL`` is not set.
+DFLT_COUCHDB_URL = "http://127.0.0.1:5984"
+
+
+def default_couchdb_url() -> str:
+    """The CouchDB URL stores use when none is given: ``$COUCHDB_URL`` or the local default."""
+    return os.environ.get(COUCHDB_URL_ENVVAR) or DFLT_COUCHDB_URL
 
 
 class CouchDbPersister(Persister):
@@ -68,11 +83,13 @@ class CouchDbPersister(Persister):
         self,
         user="admin",
         password="admin",
-        url="http://127.0.0.1:5984",
+        url=None,
         db_name="py2store",
         key_fields=("_id",),
         couchdb_client_kwargs=None,
     ):
+        if url is None:
+            url = default_couchdb_url()
         if couchdb_client_kwargs is None:
             couchdb_client_kwargs = {}
         if user and password:
