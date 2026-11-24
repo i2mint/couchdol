@@ -1,7 +1,7 @@
 {
-  "collection_duration_seconds": 3.506744861602783,
-  "commit_message": "Merge 5a0b010b9cdb7dd5edde3953c854a1756afa2a43 into 705c985ea9e774cd79908a987dc7da284bcc75e4",
-  "commit_sha": "9cce6db73e9e44f7e2b4cf05c1e31de9e6d2d1ee",
+  "collection_duration_seconds": 3.6215944290161133,
+  "commit_message": "Read a scheme-less CouchDB URL as http:// in the probe and the persister (#9)\n\nThe conftest probe now reads a URL without a scheme as http:// for both\nparsing and redaction, so its password stays out of the skip reason and the\nnamed host is probed; a malformed port skips the CouchDB items with a\nredacted reason instead of failing collection. CouchDbPersister built\n'http//' (no colon) when inserting credentials into a scheme-less URL.\n\nFixes #8",
+  "commit_sha": "6337e77690304e0b32fb526183b44cb94dd6c11f",
   "metrics": {
     "coverage": {
       "branch_coverage": 0.0,
@@ -34,14 +34,14 @@
     },
     "workflow_status": {
       "last_run_status": "success",
-      "last_success_timestamp": "2026-11-24T04:52:27Z",
+      "last_success_timestamp": "2026-11-24T05:07:43Z",
       "recent_failure_count": 0,
-      "run_url": "https://github.com/i2mint/couchdol/actions/runs/45329308321",
+      "run_url": "https://github.com/i2mint/couchdol/actions/runs/45330973435",
       "total_runs_analyzed": 10
     }
   },
   "python_version": "3.10",
   "schema_version": "1.0",
-  "timestamp": "2026-11-24T05:07:38.188096Z",
+  "timestamp": "2026-11-24T05:09:01.704321Z",
   "workflow_status": {}
 }
