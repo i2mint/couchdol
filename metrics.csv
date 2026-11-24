@@ -1,21 +1,28 @@
 metric,value
 schema_version,1.0
-timestamp,2026-11-24T01:07:48.101085Z
-commit_sha,315820d138b32dbf0ca2f44ca48b751ffefced2c
-commit_message,Merge 91a29b7b857c8a071fb8d7c78a2c0af6c22ed5cc into d46330ff32d97c424652bf1dca07a0e082d471ff
+timestamp,2026-11-24T01:07:52.917842Z
+commit_sha,91a29b7b857c8a071fb8d7c78a2c0af6c22ed5cc
+commit_message,"One CouchDB URL for the probe, the tests and default stores
+
+The default store URL now follows COUCHDB_URL (else http://127.0.0.1:5984),
+via couchdol.default_couchdb_url(). conftest probes that URL, hands it to
+tests through a couchdb_url fixture, and skips only the items that need a
+server (tests requesting the fixture, and the doctests).
+
+Fixes #4"
 python_version,3.10
-metrics.umpyre_stats.num_functions,6411
-metrics.umpyre_stats.num_classes,1594
-metrics.umpyre_stats.total_lines,245712
-metrics.umpyre_stats.empty_lines,30723
-metrics.umpyre_stats.comment_lines,13418
-metrics.umpyre_stats.docs_lines,29386
-metrics.umpyre_stats.function_lines,103524
-metrics.umpyre_stats.empty_lines_ratio,0.12503662824770462
-metrics.umpyre_stats.comment_lines_ratio,0.05460864752230253
-metrics.umpyre_stats.function_lines_ratio,0.42132252393045516
-metrics.umpyre_stats.mean_lines_per_function,16.14787084698175
-metrics.umpyre_stats.files_analyzed,581
+metrics.umpyre_stats.num_functions,6108
+metrics.umpyre_stats.num_classes,1533
+metrics.umpyre_stats.total_lines,239433
+metrics.umpyre_stats.empty_lines,29678
+metrics.umpyre_stats.comment_lines,13025
+metrics.umpyre_stats.docs_lines,28465
+metrics.umpyre_stats.function_lines,99146
+metrics.umpyre_stats.empty_lines_ratio,0.12395116796765693
+metrics.umpyre_stats.comment_lines_ratio,0.05439935180196548
+metrics.umpyre_stats.function_lines_ratio,0.41408661295644295
+metrics.umpyre_stats.mean_lines_per_function,16.23215455140799
+metrics.umpyre_stats.files_analyzed,570
 metrics.umpyre_stats.pypi_version,0.0.3
 metrics.workflow_status.last_run_status,success
 metrics.workflow_status.last_success_timestamp,2026-11-22T17:07:26Z
@@ -36,4 +43,4 @@ metrics.coverage.branch_coverage,0.0
 metrics.coverage.statements_covered,0
 metrics.coverage.statements_total,0
 metrics.coverage.error,No coverage file found
-collection_duration_seconds,2.8849222660064697
+collection_duration_seconds,3.349435567855835
