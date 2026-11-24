@@ -1,6 +1,6 @@
 metric,value
 schema_version,1.0
-timestamp,2026-11-24T05:09:01.704321Z
+timestamp,2026-11-24T05:09:02.777430Z
 commit_sha,6337e77690304e0b32fb526183b44cb94dd6c11f
 commit_message,"Read a scheme-less CouchDB URL as http:// in the probe and the persister (#9)
 
@@ -12,18 +12,18 @@ redacted reason instead of failing collection. CouchDbPersister built
 
 Fixes #8"
 python_version,3.10
-metrics.umpyre_stats.num_functions,6414
-metrics.umpyre_stats.num_classes,1594
-metrics.umpyre_stats.total_lines,245762
-metrics.umpyre_stats.empty_lines,30737
-metrics.umpyre_stats.comment_lines,13420
-metrics.umpyre_stats.docs_lines,29412
-metrics.umpyre_stats.function_lines,103563
-metrics.umpyre_stats.empty_lines_ratio,0.12506815536982935
-metrics.umpyre_stats.comment_lines_ratio,0.054605675409542566
-metrics.umpyre_stats.function_lines_ratio,0.4213954964559208
-metrics.umpyre_stats.mean_lines_per_function,16.14639850327409
-metrics.umpyre_stats.files_analyzed,581
+metrics.umpyre_stats.num_functions,6111
+metrics.umpyre_stats.num_classes,1533
+metrics.umpyre_stats.total_lines,239483
+metrics.umpyre_stats.empty_lines,29692
+metrics.umpyre_stats.comment_lines,13027
+metrics.umpyre_stats.docs_lines,28491
+metrics.umpyre_stats.function_lines,99185
+metrics.umpyre_stats.empty_lines_ratio,0.12398374832451572
+metrics.umpyre_stats.comment_lines_ratio,0.05439634546084691
+metrics.umpyre_stats.function_lines_ratio,0.4141630094829278
+metrics.umpyre_stats.mean_lines_per_function,16.230567828505972
+metrics.umpyre_stats.files_analyzed,570
 metrics.umpyre_stats.pypi_version,0.0.5
 metrics.workflow_status.last_run_status,success
 metrics.workflow_status.last_success_timestamp,2026-11-24T05:07:43Z
@@ -44,4 +44,4 @@ metrics.coverage.branch_coverage,0.0
 metrics.coverage.statements_covered,0
 metrics.coverage.statements_total,0
 metrics.coverage.error,No coverage file found
-collection_duration_seconds,3.6215944290161133
+collection_duration_seconds,3.4813055992126465
