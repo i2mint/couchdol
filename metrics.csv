@@ -1,27 +1,21 @@
 metric,value
 schema_version,1.0
-timestamp,2026-11-24T04:49:21.779315Z
-commit_sha,f5b28e42219833695ac8731b4f2dbc0be63042bf
-commit_message,"fix(conftest): probe the client's port, and keep credentials out of the skip reason
-
-The probe defaults the port by scheme as the CouchDB client does (https 443,
-http 80; 5984 only without a scheme), and the skip reason prints the URL
-without its userinfo.
-
-Fixes #6"
+timestamp,2026-11-24T04:49:29.245184Z
+commit_sha,9ddec48a184ee0d17c56ed2656abb67629d7b4e3
+commit_message,Merge f5b28e42219833695ac8731b4f2dbc0be63042bf into d304c8d5316135cc661a9474dc326ef80e34b24c
 python_version,3.10
-metrics.umpyre_stats.num_functions,6413
-metrics.umpyre_stats.num_classes,1594
-metrics.umpyre_stats.total_lines,245733
-metrics.umpyre_stats.empty_lines,30730
-metrics.umpyre_stats.comment_lines,13420
-metrics.umpyre_stats.docs_lines,29393
-metrics.umpyre_stats.function_lines,103536
-metrics.umpyre_stats.empty_lines_ratio,0.1250544289940708
-metrics.umpyre_stats.comment_lines_ratio,0.05461211965832835
-metrics.umpyre_stats.function_lines_ratio,0.42133535178425363
-metrics.umpyre_stats.mean_lines_per_function,16.144706065803835
-metrics.umpyre_stats.files_analyzed,581
+metrics.umpyre_stats.num_functions,6110
+metrics.umpyre_stats.num_classes,1533
+metrics.umpyre_stats.total_lines,239454
+metrics.umpyre_stats.empty_lines,29685
+metrics.umpyre_stats.comment_lines,13027
+metrics.umpyre_stats.docs_lines,28472
+metrics.umpyre_stats.function_lines,99158
+metrics.umpyre_stats.empty_lines_ratio,0.12396953068230224
+metrics.umpyre_stats.comment_lines_ratio,0.054402933340015204
+metrics.umpyre_stats.function_lines_ratio,0.4141004117701103
+metrics.umpyre_stats.mean_lines_per_function,16.228805237315875
+metrics.umpyre_stats.files_analyzed,570
 metrics.umpyre_stats.pypi_version,0.0.4
 metrics.workflow_status.last_run_status,success
 metrics.workflow_status.last_success_timestamp,2026-11-24T01:14:14Z
@@ -42,4 +36,4 @@ metrics.coverage.branch_coverage,0.0
 metrics.coverage.statements_covered,0
 metrics.coverage.statements_total,0
 metrics.coverage.error,No coverage file found
-collection_duration_seconds,2.7063088417053223
+collection_duration_seconds,2.7157676219940186
