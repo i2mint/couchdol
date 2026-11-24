@@ -8,7 +8,7 @@ same server. Only items that need it are skipped: tests requesting
 """
 
 import socket
-from urllib.parse import urlparse
+from urllib.parse import urlsplit
 
 import pytest
 from _pytest.doctest import DoctestItem
@@ -16,13 +16,34 @@ from _pytest.doctest import DoctestItem
 from couchdol import default_couchdb_url
 
 
+#: Port the CouchDB client connects to when the URL names none (it uses the
+#: scheme's own port, as ``http.client`` does).
+DEFAULT_PORTS = {"http": 80, "https": 443}
+
+
+def probe_address(url: str) -> tuple[str, int]:
+    """The ``(host, port)`` the CouchDB client connects to for ``url``.
+
+    >>> probe_address("https://couch.example.com")
+    ('couch.example.com', 443)
+    >>> probe_address("http://127.0.0.1:5984")
+    ('127.0.0.1', 5984)
+    """
+    parsed = urlsplit(url)
+    port = parsed.port or DEFAULT_PORTS.get(parsed.scheme.lower(), 5984)
+    return parsed.hostname or "127.0.0.1", port
+
+
+def redact_url(url: str) -> str:
+    """``url`` without its userinfo, so it can be printed (a skip reason, a log)."""
+    parsed = urlsplit(url)
+    return parsed._replace(netloc=parsed.netloc.rpartition("@")[2]).geturl()
+
+
 def couchdb_reachable(url: str, *, timeout: float = 0.5) -> bool:
     """True if something accepts TCP connections at the CouchDB ``url``."""
-    parsed = urlparse(url)
     try:
-        with socket.create_connection(
-            (parsed.hostname or "127.0.0.1", parsed.port or 5984), timeout=timeout
-        ):
+        with socket.create_connection(probe_address(url), timeout=timeout):
             return True
     except OSError:
         return False
@@ -44,7 +65,7 @@ def pytest_collection_modifyitems(config, items):
     url = default_couchdb_url()
     if couchdb_reachable(url):
         return
-    skip = pytest.mark.skip(reason=f"no CouchDB reachable at {url}")
+    skip = pytest.mark.skip(reason=f"no CouchDB reachable at {redact_url(url)}")
     for item in items:
         if _needs_couchdb(item):
             item.add_marker(skip)
