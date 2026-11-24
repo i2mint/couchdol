@@ -1,5 +1,5 @@
 {
-  "collection_duration_seconds": 2.7157676219940186,
+  "collection_duration_seconds": 3.540447950363159,
   "commit_message": "Merge f5b28e42219833695ac8731b4f2dbc0be63042bf into d304c8d5316135cc661a9474dc326ef80e34b24c",
   "commit_sha": "9ddec48a184ee0d17c56ed2656abb67629d7b4e3",
   "metrics": {
@@ -11,19 +11,19 @@
       "statements_total": 0
     },
     "umpyre_stats": {
-      "comment_lines": 13027,
-      "comment_lines_ratio": 0.054402933340015204,
-      "docs_lines": 28472,
-      "empty_lines": 29685,
-      "empty_lines_ratio": 0.12396953068230224,
-      "files_analyzed": 570,
-      "function_lines": 99158,
-      "function_lines_ratio": 0.4141004117701103,
-      "mean_lines_per_function": 16.228805237315875,
-      "num_classes": 1533,
-      "num_functions": 6110,
+      "comment_lines": 13420,
+      "comment_lines_ratio": 0.05461211965832835,
+      "docs_lines": 29393,
+      "empty_lines": 30730,
+      "empty_lines_ratio": 0.1250544289940708,
+      "files_analyzed": 581,
+      "function_lines": 103536,
+      "function_lines_ratio": 0.42133535178425363,
+      "mean_lines_per_function": 16.144706065803835,
+      "num_classes": 1594,
+      "num_functions": 6413,
       "pypi_version": "0.0.4",
-      "total_lines": 239454
+      "total_lines": 245733
     },
     "wily": {
       "cyclomatic_avg": 0.0,
@@ -34,14 +34,14 @@
     },
     "workflow_status": {
       "last_run_status": "success",
-      "last_success_timestamp": "2026-11-24T01:14:14Z",
+      "last_success_timestamp": "2026-11-24T04:49:26Z",
       "recent_failure_count": 0,
-      "run_url": "https://github.com/i2mint/couchdol/actions/runs/45303455271",
+      "run_url": "https://github.com/i2mint/couchdol/actions/runs/45328927709",
       "total_runs_analyzed": 10
     }
   },
   "python_version": "3.10",
   "schema_version": "1.0",
-  "timestamp": "2026-11-24T04:49:29.245184Z",
+  "timestamp": "2026-11-24T04:49:42.965257Z",
   "workflow_status": {}
 }
