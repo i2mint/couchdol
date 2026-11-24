@@ -1,5 +1,5 @@
 {
-  "collection_duration_seconds": 2.7339258193969727,
+  "collection_duration_seconds": 2.9921252727508545,
   "commit_message": "One CouchDB URL for the probe, the tests and default stores (#5)\n\nThe default store URL now follows COUCHDB_URL (else http://127.0.0.1:5984),\nvia couchdol.default_couchdb_url(). conftest probes that URL, hands it to\ntests through a couchdb_url fixture, and skips only the items that need a\nserver (tests requesting the fixture, and the doctests).\n\nFixes #4",
   "commit_sha": "4de95da4983ae44b975c981ba6fdf29d7eddcfd7",
   "metrics": {
@@ -11,19 +11,19 @@
       "statements_total": 0
     },
     "umpyre_stats": {
-      "comment_lines": 13418,
-      "comment_lines_ratio": 0.05460864752230253,
-      "docs_lines": 29386,
-      "empty_lines": 30723,
-      "empty_lines_ratio": 0.12503662824770462,
-      "files_analyzed": 581,
-      "function_lines": 103524,
-      "function_lines_ratio": 0.42132252393045516,
-      "mean_lines_per_function": 16.14787084698175,
-      "num_classes": 1594,
-      "num_functions": 6411,
+      "comment_lines": 13025,
+      "comment_lines_ratio": 0.05439935180196548,
+      "docs_lines": 28465,
+      "empty_lines": 29678,
+      "empty_lines_ratio": 0.12395116796765693,
+      "files_analyzed": 570,
+      "function_lines": 99146,
+      "function_lines_ratio": 0.41408661295644295,
+      "mean_lines_per_function": 16.23215455140799,
+      "num_classes": 1533,
+      "num_functions": 6108,
       "pypi_version": "0.0.3",
-      "total_lines": 245712
+      "total_lines": 239433
     },
     "wily": {
       "cyclomatic_avg": 0.0,
@@ -42,6 +42,6 @@
   },
   "python_version": "3.10",
   "schema_version": "1.0",
-  "timestamp": "2026-11-24T01:12:56.515452Z",
+  "timestamp": "2026-11-24T01:13:00.463676Z",
   "workflow_status": {}
 }
