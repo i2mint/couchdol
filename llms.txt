@@ -8,7 +8,7 @@
 - [couchdol](index.html.md): couchdb with a simple (dict-like or list-like) interface
 - [API reference](api.html.md): | &#96;couchdol&#96;   | couchdb with a simple (dict-like or list-like) interface   |
 - [couchdol](_autosummary/couchdol.html.md): couchdb with a simple (dict-like or list-like) interface
-- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-24 01:13 UTC&#42;&#42; from commit &lt;a href="https://github.com/i2m...
+- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-24 04:51 UTC&#42;&#42; from commit &lt;a href="https://github.com/i2m...
 
 ## Optional
 
