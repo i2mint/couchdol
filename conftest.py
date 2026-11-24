@@ -21,22 +21,47 @@ from couchdol import default_couchdb_url
 DEFAULT_PORTS = {"http": 80, "https": 443}
 
 
+def with_scheme(url: str) -> str:
+    """``url``, read as ``http://...`` when it names no scheme.
+
+    Without one, ``urlsplit`` takes the user name (or the host) for the scheme and
+    finds no host at all.
+
+    >>> with_scheme("db.example:5984")
+    'http://db.example:5984'
+    >>> with_scheme("https://db.example")
+    'https://db.example'
+    """
+    return url if "://" in url else f"http://{url}"
+
+
 def probe_address(url: str) -> tuple[str, int]:
     """The ``(host, port)`` the CouchDB client connects to for ``url``.
+
+    A URL without a scheme is read as ``http://``. A port that is not a number
+    raises ``ValueError``.
 
     >>> probe_address("https://couch.example.com")
     ('couch.example.com', 443)
     >>> probe_address("http://127.0.0.1:5984")
     ('127.0.0.1', 5984)
+    >>> probe_address("couch.example.com:5984")
+    ('couch.example.com', 5984)
     """
-    parsed = urlsplit(url)
+    parsed = urlsplit(with_scheme(url))
     port = parsed.port or DEFAULT_PORTS.get(parsed.scheme.lower(), 5984)
     return parsed.hostname or "127.0.0.1", port
 
 
 def redact_url(url: str) -> str:
-    """``url`` without its userinfo, so it can be printed (a skip reason, a log)."""
-    parsed = urlsplit(url)
+    """``url`` without its userinfo, so it can be printed (a skip reason, a log).
+
+    A URL without a scheme is read as ``http://``, so its userinfo is found too.
+
+    >>> redact_url("http://user:pw@couch.example.com:5984/db")
+    'http://couch.example.com:5984/db'
+    """
+    parsed = urlsplit(with_scheme(url))
     return parsed._replace(netloc=parsed.netloc.rpartition("@")[2]).geturl()
 
 
@@ -63,9 +88,13 @@ def couchdb_url() -> str:
 
 def pytest_collection_modifyitems(config, items):
     url = default_couchdb_url()
-    if couchdb_reachable(url):
-        return
-    skip = pytest.mark.skip(reason=f"no CouchDB reachable at {redact_url(url)}")
+    try:
+        if couchdb_reachable(url):
+            return
+        reason = f"no CouchDB reachable at {redact_url(url)}"
+    except ValueError:  # a malformed URL, such as a port that is not a number
+        reason = f"invalid CouchDB URL {redact_url(url)}"
+    skip = pytest.mark.skip(reason=reason)
     for item in items:
         if _needs_couchdb(item):
             item.add_marker(skip)

@@ -97,7 +97,7 @@ class CouchDbPersister(Persister):
             if "//" in url:  # if scheme present
                 url = f"{url.split('//')[0]}//{user}:{password}@{url.split('//')[1]}"
             else:
-                url = f"http//{user}:{password}@{url}"
+                url = f"http://{user}:{password}@{url}"
         self._couchdb_server = Server(url=url, **couchdb_client_kwargs)
         self._db_name = db_name
         # if db not created
