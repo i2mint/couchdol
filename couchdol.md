@@ -1,4 +1,4 @@
-> built 2026-11-24 04:51 UTC from 705c985 (master) · couchdol 0.0.5. Details: build_info.json
+> built 2026-11-24 05:09 UTC from 61fa8ad (master) · couchdol 0.0.6. Details: build_info.json
 
 # index.html.md
 
@@ -249,18 +249,20 @@ The CouchDB URL stores use when none is given: `$COUCHDB_URL` or the local defau
 
 # About this build
 
-This documentation was built on **2026-11-24 04:51 UTC** from commit <a href="https://github.com/i2mint/couchdol/commit/705c985ea9e774cd79908a987dc7da284bcc75e4"><code>705c985</code></a> on branch <code>master</code>, for **couchdol 0.0.5** (from <code>pyproject.toml</code>).
+This documentation was built on **2026-11-24 05:09 UTC** from commit <a href="https://github.com/i2mint/couchdol/commit/61fa8ad39d78ee18e592432e76df1c1954de1347"><code>61fa8ad</code></a> on branch <code>master</code>, for **couchdol 0.0.6** (from <code>pyproject.toml</code>).
 
-#### NOTE
-Nothing suggests a mismatch: the tree was clean at the commit above, and the documented version is the one on PyPI.
+#### WARNING
+The documentation and the package may be misaligned:
+
+- The documented version (0.0.6) is ahead of the latest release on PyPI (0.0.5): these docs describe unreleased code.
 
 ## Source
 
 |                     |                                                                                                                                                        |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commit              | <a href="https://github.com/i2mint/couchdol/commit/705c985ea9e774cd79908a987dc7da284bcc75e4"><code>705c985ea9e774cd79908a987dc7da284bcc75e4</code></a> |
+| Commit              | <a href="https://github.com/i2mint/couchdol/commit/61fa8ad39d78ee18e592432e76df1c1954de1347"><code>61fa8ad39d78ee18e592432e76df1c1954de1347</code></a> |
 | Branch              | <code>master</code>                                                                                                                                    |
-| Tags at this commit | <code>0.0.5</code>                                                                                                                                     |
+| Tags at this commit | <code>0.0.6</code>                                                                                                                                     |
 | Working tree        | clean                                                                                                                                                  |
 | Remote              | <code>https://github.com/i2mint/couchdol</code>                                                                                                        |
 
@@ -269,9 +271,9 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 |              |                                                                                            |
 |--------------|--------------------------------------------------------------------------------------------|
 | Repository   | <code>i2mint/couchdol</code>                                                               |
-| Run          | <a href="https://github.com/i2mint/couchdol/actions/runs/45329123614">45329123614</a>      |
+| Run          | <a href="https://github.com/i2mint/couchdol/actions/runs/45331142621">45331142621</a>      |
 | Ref          | <code>refs/heads/master</code>                                                             |
-| Event commit | <code>e98bc2dc634eaa095432545e8b3c5a676830e214</code> (in the history of the built commit) |
+| Event commit | <code>6337e77690304e0b32fb526183b44cb94dd6c11f</code> (in the history of the built commit) |
 
 ## Tools
 
@@ -296,13 +298,13 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 
 ## Package on PyPI
 
-Latest release: <a href="https://pypi.org/project/couchdol/0.0.5/">0.0.5</a>, the same as the documented version.
+Latest release: <a href="https://pypi.org/project/couchdol/0.0.5/">0.0.5</a>, older than the documented version (0.0.6).
 
 ## Reproduce
 
 ```bash
 git clone https://github.com/i2mint/couchdol && cd couchdol
-git checkout 705c985ea9e774cd79908a987dc7da284bcc75e4
+git checkout 61fa8ad39d78ee18e592432e76df1c1954de1347
 pip install "epythet==0.2.25"
 epythet quickstart . --ignore tests/ scrap/ examples/
 ```
