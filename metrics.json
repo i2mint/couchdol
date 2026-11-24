@@ -1,7 +1,7 @@
 {
-  "collection_duration_seconds": 2.6935977935791016,
-  "commit_message": "fix(conftest): probe the client's port, and keep credentials out of the skip reason (#7)\n\nThe probe defaults the port by scheme as the CouchDB client does (https 443,\nhttp 80; 5984 only without a scheme), and the skip reason prints the URL\nwithout its userinfo.\n\nFixes #6",
-  "commit_sha": "e98bc2dc634eaa095432545e8b3c5a676830e214",
+  "collection_duration_seconds": 2.296635627746582,
+  "commit_message": "Read a scheme-less CouchDB URL as http:// in the probe and the persister\n\nThe conftest probe now reads a URL without a scheme as http:// for both\nparsing and redaction, so its password stays out of the skip reason and the\nnamed host is probed; a malformed port skips the CouchDB items with a\nredacted reason instead of failing collection. CouchDbPersister built\n'http//' (no colon) when inserting credentials into a scheme-less URL.\n\nFixes #8",
+  "commit_sha": "5a0b010b9cdb7dd5edde3953c854a1756afa2a43",
   "metrics": {
     "coverage": {
       "branch_coverage": 0.0,
@@ -11,19 +11,19 @@
       "statements_total": 0
     },
     "umpyre_stats": {
-      "comment_lines": 13027,
-      "comment_lines_ratio": 0.054402933340015204,
-      "docs_lines": 28472,
-      "empty_lines": 29685,
-      "empty_lines_ratio": 0.12396953068230224,
-      "files_analyzed": 570,
-      "function_lines": 99158,
-      "function_lines_ratio": 0.4141004117701103,
-      "mean_lines_per_function": 16.228805237315875,
-      "num_classes": 1533,
-      "num_functions": 6110,
-      "pypi_version": "0.0.4",
-      "total_lines": 239454
+      "comment_lines": 13420,
+      "comment_lines_ratio": 0.054605675409542566,
+      "docs_lines": 29412,
+      "empty_lines": 30737,
+      "empty_lines_ratio": 0.12506815536982935,
+      "files_analyzed": 581,
+      "function_lines": 103563,
+      "function_lines_ratio": 0.4213954964559208,
+      "mean_lines_per_function": 16.14639850327409,
+      "num_classes": 1594,
+      "num_functions": 6414,
+      "pypi_version": "0.0.5",
+      "total_lines": 245762
     },
     "wily": {
       "cyclomatic_avg": 0.0,
@@ -34,14 +34,14 @@
     },
     "workflow_status": {
       "last_run_status": "success",
-      "last_success_timestamp": "2026-11-24T04:49:50Z",
+      "last_success_timestamp": "2026-11-24T04:52:27Z",
       "recent_failure_count": 0,
-      "run_url": "https://github.com/i2mint/couchdol/actions/runs/45328956769",
+      "run_url": "https://github.com/i2mint/couchdol/actions/runs/45329308321",
       "total_runs_analyzed": 10
     }
   },
   "python_version": "3.10",
   "schema_version": "1.0",
-  "timestamp": "2026-11-24T04:51:07.613865Z",
+  "timestamp": "2026-11-24T05:07:20.276282Z",
   "workflow_status": {}
 }

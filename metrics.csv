@@ -1,32 +1,34 @@
 metric,value
 schema_version,1.0
-timestamp,2026-11-24T04:51:07.613865Z
-commit_sha,e98bc2dc634eaa095432545e8b3c5a676830e214
-commit_message,"fix(conftest): probe the client's port, and keep credentials out of the skip reason (#7)
+timestamp,2026-11-24T05:07:20.276282Z
+commit_sha,5a0b010b9cdb7dd5edde3953c854a1756afa2a43
+commit_message,"Read a scheme-less CouchDB URL as http:// in the probe and the persister
 
-The probe defaults the port by scheme as the CouchDB client does (https 443,
-http 80; 5984 only without a scheme), and the skip reason prints the URL
-without its userinfo.
+The conftest probe now reads a URL without a scheme as http:// for both
+parsing and redaction, so its password stays out of the skip reason and the
+named host is probed; a malformed port skips the CouchDB items with a
+redacted reason instead of failing collection. CouchDbPersister built
+'http//' (no colon) when inserting credentials into a scheme-less URL.
 
-Fixes #6"
+Fixes #8"
 python_version,3.10
-metrics.umpyre_stats.num_functions,6110
-metrics.umpyre_stats.num_classes,1533
-metrics.umpyre_stats.total_lines,239454
-metrics.umpyre_stats.empty_lines,29685
-metrics.umpyre_stats.comment_lines,13027
-metrics.umpyre_stats.docs_lines,28472
-metrics.umpyre_stats.function_lines,99158
-metrics.umpyre_stats.empty_lines_ratio,0.12396953068230224
-metrics.umpyre_stats.comment_lines_ratio,0.054402933340015204
-metrics.umpyre_stats.function_lines_ratio,0.4141004117701103
-metrics.umpyre_stats.mean_lines_per_function,16.228805237315875
-metrics.umpyre_stats.files_analyzed,570
-metrics.umpyre_stats.pypi_version,0.0.4
+metrics.umpyre_stats.num_functions,6414
+metrics.umpyre_stats.num_classes,1594
+metrics.umpyre_stats.total_lines,245762
+metrics.umpyre_stats.empty_lines,30737
+metrics.umpyre_stats.comment_lines,13420
+metrics.umpyre_stats.docs_lines,29412
+metrics.umpyre_stats.function_lines,103563
+metrics.umpyre_stats.empty_lines_ratio,0.12506815536982935
+metrics.umpyre_stats.comment_lines_ratio,0.054605675409542566
+metrics.umpyre_stats.function_lines_ratio,0.4213954964559208
+metrics.umpyre_stats.mean_lines_per_function,16.14639850327409
+metrics.umpyre_stats.files_analyzed,581
+metrics.umpyre_stats.pypi_version,0.0.5
 metrics.workflow_status.last_run_status,success
-metrics.workflow_status.last_success_timestamp,2026-11-24T04:49:50Z
+metrics.workflow_status.last_success_timestamp,2026-11-24T04:52:27Z
 metrics.workflow_status.recent_failure_count,0
-metrics.workflow_status.run_url,https://github.com/i2mint/couchdol/actions/runs/45328956769
+metrics.workflow_status.run_url,https://github.com/i2mint/couchdol/actions/runs/45329308321
 metrics.workflow_status.total_runs_analyzed,10
 metrics.wily.cyclomatic_avg,0.0
 metrics.wily.maintainability_index,0.0
@@ -42,4 +44,4 @@ metrics.coverage.branch_coverage,0.0
 metrics.coverage.statements_covered,0
 metrics.coverage.statements_total,0
 metrics.coverage.error,No coverage file found
-collection_duration_seconds,2.6935977935791016
+collection_duration_seconds,2.296635627746582
