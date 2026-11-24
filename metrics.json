@@ -1,5 +1,5 @@
 {
-  "collection_duration_seconds": 2.1766576766967773,
+  "collection_duration_seconds": 2.6935977935791016,
   "commit_message": "fix(conftest): probe the client's port, and keep credentials out of the skip reason (#7)\n\nThe probe defaults the port by scheme as the CouchDB client does (https 443,\nhttp 80; 5984 only without a scheme), and the skip reason prints the URL\nwithout its userinfo.\n\nFixes #6",
   "commit_sha": "e98bc2dc634eaa095432545e8b3c5a676830e214",
   "metrics": {
@@ -11,19 +11,19 @@
       "statements_total": 0
     },
     "umpyre_stats": {
-      "comment_lines": 13420,
-      "comment_lines_ratio": 0.05461211965832835,
-      "docs_lines": 29393,
-      "empty_lines": 30730,
-      "empty_lines_ratio": 0.1250544289940708,
-      "files_analyzed": 581,
-      "function_lines": 103536,
-      "function_lines_ratio": 0.42133535178425363,
-      "mean_lines_per_function": 16.144706065803835,
-      "num_classes": 1594,
-      "num_functions": 6413,
+      "comment_lines": 13027,
+      "comment_lines_ratio": 0.054402933340015204,
+      "docs_lines": 28472,
+      "empty_lines": 29685,
+      "empty_lines_ratio": 0.12396953068230224,
+      "files_analyzed": 570,
+      "function_lines": 99158,
+      "function_lines_ratio": 0.4141004117701103,
+      "mean_lines_per_function": 16.228805237315875,
+      "num_classes": 1533,
+      "num_functions": 6110,
       "pypi_version": "0.0.4",
-      "total_lines": 245733
+      "total_lines": 239454
     },
     "wily": {
       "cyclomatic_avg": 0.0,
@@ -42,6 +42,6 @@
   },
   "python_version": "3.10",
   "schema_version": "1.0",
-  "timestamp": "2026-11-24T04:51:02.490411Z",
+  "timestamp": "2026-11-24T04:51:07.613865Z",
   "workflow_status": {}
 }
