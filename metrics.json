@@ -1,7 +1,7 @@
 {
-  "collection_duration_seconds": 3.478332281112671,
-  "commit_message": "One CouchDB URL for the probe, the tests and default stores\n\nThe default store URL now follows COUCHDB_URL (else http://127.0.0.1:5984),\nvia couchdol.default_couchdb_url(). conftest probes that URL, hands it to\ntests through a couchdb_url fixture, and skips only the items that need a\nserver (tests requesting the fixture, and the doctests).\n\nFixes #4",
-  "commit_sha": "91a29b7b857c8a071fb8d7c78a2c0af6c22ed5cc",
+  "collection_duration_seconds": 2.8849222660064697,
+  "commit_message": "Merge 91a29b7b857c8a071fb8d7c78a2c0af6c22ed5cc into d46330ff32d97c424652bf1dca07a0e082d471ff",
+  "commit_sha": "315820d138b32dbf0ca2f44ca48b751ffefced2c",
   "metrics": {
     "coverage": {
       "branch_coverage": 0.0,
@@ -42,6 +42,6 @@
   },
   "python_version": "3.10",
   "schema_version": "1.0",
-  "timestamp": "2026-11-24T01:07:43.458042Z",
+  "timestamp": "2026-11-24T01:07:48.101085Z",
   "workflow_status": {}
 }
